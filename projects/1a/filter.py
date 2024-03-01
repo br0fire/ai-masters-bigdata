@@ -58,16 +58,16 @@ else:
     outfields.remove(field)
 
 
-
+fields.remove("label")
 for line in sys.stdin:
     # skip header
-    if line.startswith(fields[0]):
-        continue
+    # if line.startswith(fields[0]):
+    #     continue
 
     #unpack into a tuple/dict
     values = line.rstrip().split('\t')
     hotel_record = dict(zip(fields, values)) #Hotel(values)
-
+    #print(hotel_record)
     #apply filter conditions
     if filter_cond(hotel_record):
         output = "\t".join([hotel_record[x] for x in outfields])
