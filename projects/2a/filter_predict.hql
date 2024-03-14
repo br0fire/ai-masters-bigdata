@@ -19,4 +19,4 @@ INSERT INTO TABLE hw2_pred SELECT TRANSFORM(*) USING './predict.py' FROM (
             if12,
             if13
         FROM hw2_test WHERE if1 > 20 AND if1 < 40 AND NOT if1 = '' AND NOT if1 = 'NULL' AND NOT if1 = '\\N'
-    ); 
+    ) t1; 
