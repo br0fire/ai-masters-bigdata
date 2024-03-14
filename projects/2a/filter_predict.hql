@@ -3,7 +3,7 @@ ADD FILE projects/2a/predict.py;
 ADD FILE 2a.joblib;
 
 INSERT INTO TABLE hw2_pred SELECT TRANSFORM(*) USING './predict.py' FROM (
-        SELECT (
+        SELECT 
             id,
             if1,
             if2,
@@ -18,6 +18,5 @@ INSERT INTO TABLE hw2_pred SELECT TRANSFORM(*) USING './predict.py' FROM (
             if11,
             if12,
             if13
-        ) 
         FROM hw2_test WHERE if1 > 20 AND if1 < 40 AND NOT if1 = '' AND NOT if1 = 'NULL' AND NOT if1 = '\\N'
     ); 
