@@ -1,4 +1,3 @@
-ADD FILE '2a.joblib';
 ADD FILE 'model.py';
 ADD FILE 'predict.py';
 
