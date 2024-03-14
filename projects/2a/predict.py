@@ -17,7 +17,7 @@ logging.info("SCRIPT CALLED AS {}".format(sys.argv[0]))
 logging.info("ARGS {}".format(sys.argv[1:]))
 
 #load the model
-model = load("1a.joblib")
+model = load("2a.joblib")
 fields.remove('label')
 #read and infere
 read_opts=dict(
@@ -28,7 +28,7 @@ read_opts=dict(
 # print(kek)
 for df in pd.read_csv(sys.stdin, **read_opts):
     #print(df)
-     pred = model.predict_proba(df)
+     pred = model.predict_proba(df.drop(['id'], axis=1))
      pred = [x[0] for x in pred]
      out = zip(df.id, pred)
      print("\n".join(["{0}\t{1}".format(*i) for i in out]))

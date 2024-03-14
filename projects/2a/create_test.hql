@@ -42,4 +42,4 @@ cf26 VARCHAR(8)
 )
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY '\t'
-LOCATION '/datasets/criteo/testdir';
+LOCATION '/datasets/criteo/testdir'; 

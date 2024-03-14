@@ -1,5 +1,5 @@
 #!/bin/bash
 
-projects/$1/train.py $@
+projects/$2/train.py $@
 
 
