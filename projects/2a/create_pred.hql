@@ -1,5 +1,5 @@
 CREATE TABLE hw2_pred(
-id IN
+id INT
 pred FLOAT
 )
 ROW FORMAT DELIMITED 
