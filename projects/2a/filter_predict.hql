@@ -2,7 +2,7 @@ ADD FILE projects/2a/model.py;
 ADD FILE projects/2a/predict.py;
 ADD FILE 2a.joblib;
 
-INSERT INTO TABLE hw2_pred SELECT TRANSFORM * USING './predict.py' FROM (
+INSERT INTO TABLE hw2_pred SELECT TRANSFORM(*) USING './predict.py' FROM (
         SELECT (
             id,
             if1,
