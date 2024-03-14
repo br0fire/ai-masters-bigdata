@@ -1,4 +1,3 @@
-ADD FILE 'model.py';
 ADD FILE 'predict.py';
 
 
