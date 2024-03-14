@@ -27,7 +27,7 @@ read_opts=dict(
 # kek = pd.read_csv(sys.stdin, **read_opts)
 # print(kek)
 for df in pd.read_csv(sys.stdin, **read_opts):
-    #print(df)
+     print(df.head(5))
      pred = model.predict_proba(df.drop(['id'], axis=1))
      pred = [x[0] for x in pred]
      out = zip(df.id, pred)
