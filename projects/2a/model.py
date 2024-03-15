@@ -7,9 +7,9 @@ from sklearn.linear_model import LogisticRegression
 # Dataset fields
 #
 numeric_features = ["if"+str(i) for i in range(1,14)]
-
-fields = ["id", "label"] + numeric_features
-
+categorical_features = ["cf"+str(i) for i in range(1,27)] 
+fields = ["id", "label"] + numeric_features + categorical_features
+from sklearn.preprocessing import OneHotEncoder
 #
 # Model pipeline
 #
@@ -18,13 +18,20 @@ fields = ["id", "label"] + numeric_features
 numeric_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='median'))
 ])
+categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+    ('onehot', OneHotEncoder(handle_unknown='ignore'))
+])
 
 
 preprocessor = ColumnTransformer(
     transformers=[
-        ('num', numeric_transformer, numeric_features)
+        ('num', numeric_transformer, numeric_features),
+        ('cat', categorical_transformer, categorical_features)
     ]
 )
+
+
 
 # Now we have a full prediction pipeline.
 model = Pipeline(steps=[

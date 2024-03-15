@@ -26,9 +26,8 @@ read_opts=dict(
 ) 
 # kek = pd.read_csv(sys.stdin, **read_opts)
 # print(kek)
-categorical_features = ["cf"+str(i) for i in range(1,27)] 
 for df in pd.read_csv(sys.stdin, **read_opts):
-     pred = model.predict_proba(df.drop(['id']+categorical_features, axis=1))
+     pred = model.predict_proba(df.drop(['id'])
      pred = [x[0] for x in pred]
      out = zip(df.id, pred)
      print("\n".join(["{0}\t{1}".format(*i) for i in out]))
