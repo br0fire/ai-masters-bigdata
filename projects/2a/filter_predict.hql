@@ -22,4 +22,5 @@ ADD FILE 2a.joblib;
 --     ) t1; 
 
 INSERT INTO TABLE hw2_pred SELECT TRANSFORM(*) USING './predict.py'
-        FROM hw2_test WHERE if1 > 20 AND if1 < 40 AND NOT if1 = '' AND NOT if1 = 'NULL' AND NOT if1 = '\\N'; 
+        FROM hw2_test WHERE if1 > 20 AND if1 < 40;
+        -- AND NOT if1 = '' AND NOT if1 = 'NULL' AND NOT if1 = '\\N'; 
