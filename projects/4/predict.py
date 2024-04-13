@@ -1,7 +1,7 @@
 #!/opt/conda/envs/dsenv/bin/python
 import sys
 from pyspark.sql import SparkSession
-
+from pyspark.sql.types import *
 
 model_path = sys.argv[1]
 test_path = sys.argv[2]
