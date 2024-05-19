@@ -1,6 +1,10 @@
+name: 5mla
+
+conda_env: conda.yaml
+
 entry_points:
   main:
     parameters:
-      train_path: {type: string, default: '/home/users/datasets/criteo/train1000.txt'}
-      tol: {type: float, default: 0.001}
-    command: "python train.py {train_path} {tol}"
+      train_path: path
+      model_param1: {type: float, default: 0.5}
+    command: "python train.py {train_path} {model_param1}"
