@@ -83,7 +83,7 @@ with mlflow.start_run():
 
 print(f"fit completed")
 
-model_score = log_loss(y_test, model.predict(X_test))
+model_score = model.score(X_test, y_test)
 
 print(f"log_loss on validation: {model_score:.3f}")
 
