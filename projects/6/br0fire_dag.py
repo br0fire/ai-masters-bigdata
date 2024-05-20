@@ -31,7 +31,7 @@ with DAG(
     description='hw6',
     schedule_interval=None,
     start_date=datetime.today(),
-    catchup=False
+    catchup=True
 ) as dag:
 
     base_dir = '{{ dag_run.conf["base_dir"] if dag_run else "" }}'
